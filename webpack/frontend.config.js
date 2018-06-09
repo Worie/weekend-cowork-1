@@ -2,6 +2,7 @@ const path = require('path');
 const bundlePath = path.join(__dirname, '../', 'dist');
 
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './src/frontend.ts',
@@ -17,6 +18,7 @@ module.exports = {
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
+  externals: [nodeExternals()],
   output: {
     filename: 'bundle-frontend.js',
     path: bundlePath
