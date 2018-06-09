@@ -2,6 +2,7 @@
  * This module is en entry point and the logic below shouldn't be here
  */
 
+import 'reflect-metadata';
 import * as Express from 'express';
 import * as SocketIO from 'socket.io';
 import * as Http from 'http';
@@ -15,7 +16,9 @@ app.get('/', (req: any, res: any) => {
   res.send(`Hello world`);
 });
 
+// initialize the http server basing on Express instance 
 const server = new Http.Server(app);
+
 // initialize socket io instance with given express
 const io = SocketIO(server, {
   serveClient: false,
