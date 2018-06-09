@@ -4,12 +4,15 @@
 
 import * as Express from 'express';
 import * as SocketIO from 'socket.io';
-
+import * as Http from 'http';
 // initialize Express instance 
 const app = Express();
 
+const server = new Http.Server(app);
 // initialize socket io instance with given express
-const io = SocketIO(app);
+const io = SocketIO(server, {
+  serveClient: false,
+});
 
 // add basic listener for new connetions
 io.on('connection', (socket) => {
@@ -24,8 +27,8 @@ app.get('/', (req: any, res: any) => {
 });
 
 // port to listen on
-const EXPRESS_PORT = 8888;
+const SERVER_PORT = 8888;
 
 // set express to listen on the given port
-app.listen(EXPRESS_PORT);
+server.listen(SERVER_PORT);
 
