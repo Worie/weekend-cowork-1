@@ -6,15 +6,15 @@ import 'reflect-metadata';
 import * as Express from 'express';
 import * as SocketIO from 'socket.io';
 import * as Http from 'http';
+import * as Path from 'path';
+
+const path = Path.join(__dirname, '/dist/index.html');
 
 // initialize Express instance 
 const app = Express();
 
-// upon visiting the root of the server
-app.get('/', (req: any, res: any) => {
-  // return Hello World to the user
-  res.send(`Hello world`);
-});
+// declare static files
+app.use(Express.static('dist'))
 
 // initialize the http server basing on Express instance 
 const server = new Http.Server(app);
@@ -27,7 +27,9 @@ const io = SocketIO(server, {
 // add basic listener for new connetions
 io.on('connection', (socket) => {
   // monit the console that something has happened
-  console.log('Hello world');
+  console.log('Hello world', socket.id);
+
+  socket.emit('news', { hello: `hello` });
 });
 
 // port to listen on
