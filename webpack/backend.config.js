@@ -1,8 +1,9 @@
 const path = require('path');
 const NodemonPlugin = require('nodemon-webpack-plugin');
+const bundlePath = path.join(__dirname, '../', 'dist');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/backend.ts',
   target: 'node',
   module: {
     rules: [
@@ -17,11 +18,11 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: 'bundle-backend.js',
+    path: bundlePath
   },
   plugins: [
-    new NodemonPlugin(), // Dong
+    new NodemonPlugin(),
   ]
 };
  

@@ -4,8 +4,8 @@
   "description": "socketio mess",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -d --watch",
-    "prod": "webpack -p"
+    "frontend": "webpack --mode development --config webpack/frontend.config.js",
+    "backend": "webpack --mode development --config webpack/backend.config.js"
   },
   "repository": {
     "type": "git",
