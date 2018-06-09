@@ -2,7 +2,7 @@ const path = require('path');
 const bundlePath = path.join(__dirname, '../', 'dist');
 
 module.exports = {
-  entry: './src/front.ts',
+  entry: './src/frontend.ts',
   module: {
     rules: [
       {
