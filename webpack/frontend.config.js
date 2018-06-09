@@ -5,7 +5,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: './src/frontend.ts',
+  entry: './src/frontend/index.ts',
   module: {
     rules: [
       {
