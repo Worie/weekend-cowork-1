@@ -22,6 +22,8 @@ module.exports = {
     path: bundlePath
   },
   plugins: [
-    new FriendlyErrorsWebpackPlugin(),
+    new FriendlyErrorsWebpackPlugin({
+      clearConsole: true,
+    }),
   ],
 };
