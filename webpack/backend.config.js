@@ -3,6 +3,7 @@ const bundlePath = path.join(__dirname, '../', 'dist');
 
 const NodemonPlugin = require('nodemon-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './src/backend.ts',
@@ -16,6 +17,7 @@ module.exports = {
       }
     ]
   },
+  externals: [nodeExternals()],
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
