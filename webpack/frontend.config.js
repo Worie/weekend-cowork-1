@@ -21,9 +21,11 @@ module.exports = {
     filename: 'bundle-frontend.js',
     path: bundlePath
   },
+  stats: 'errors-only',
   plugins: [
     new FriendlyErrorsWebpackPlugin({
       clearConsole: true,
+      quiet: true,
     }),
   ],
 };
