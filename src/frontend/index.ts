@@ -12,3 +12,4 @@ socket.on('news', (data: any) => {
   // emit the response to the interlocutor
   socket.emit('my other event', { my: 'data' });
 });
+console.log('bar');
