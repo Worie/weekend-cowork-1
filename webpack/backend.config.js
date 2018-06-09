@@ -25,11 +25,14 @@ module.exports = {
     filename: 'bundle-backend.js',
     path: bundlePath
   },
+  stats: 'errors-only',
   plugins: [
     new FriendlyErrorsWebpackPlugin({
       clearConsole: true,
     }),
-    new NodemonPlugin()
+    new NodemonPlugin({
+      quiet: true,
+    })
   ]
 };
  
