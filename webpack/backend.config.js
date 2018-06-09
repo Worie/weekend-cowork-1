@@ -1,6 +1,8 @@
 const path = require('path');
-const NodemonPlugin = require('nodemon-webpack-plugin');
 const bundlePath = path.join(__dirname, '../', 'dist');
+
+const NodemonPlugin = require('nodemon-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
   entry: './src/backend.ts',
@@ -22,7 +24,10 @@ module.exports = {
     path: bundlePath
   },
   plugins: [
-    new NodemonPlugin(),
+    new FriendlyErrorsWebpackPlugin({
+      clearConsole: true,
+    }),
+    new NodemonPlugin()
   ]
 };
  
