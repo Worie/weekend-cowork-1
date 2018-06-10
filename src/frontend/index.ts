@@ -12,3 +12,11 @@ socket.on('news', (data: any) => {
   // emit the response to the interlocutor
   socket.emit('my other event', { my: 'data' });
 });
+
+const btn = document.querySelector('.send-btn')
+const sendInput = document.querySelector('.send-input')
+
+btn.addEventListener('click', (e)=>{
+  let inputValue = sendInput.value
+  alert(inputValue);
+})

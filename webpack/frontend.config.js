@@ -7,7 +7,6 @@ const bundlePath = path.join(__dirname, '../', 'dist');
 
 module.exports = {
   entry: './src/frontend/index.ts',
-  target: 'web',
   module: {
     rules: [
       {
@@ -32,6 +31,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       hash: false,
+      template: './src/frontend/index.html',
       filename: './index.html'
     }),
   ],
