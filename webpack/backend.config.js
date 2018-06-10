@@ -1,5 +1,5 @@
 const path = require('path');
-const bundlePath = path.join(__dirname, '../', 'dist');
+const bundlePath = path.join(__dirname, '../', 'dist', '/backend');
 
 const NodemonPlugin = require('nodemon-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');

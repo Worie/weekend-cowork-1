@@ -1,9 +1,9 @@
 const path = require('path');
-const bundlePath = path.join(__dirname, '../', 'dist');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const bundlePath = path.join(__dirname, '../', 'dist', '/frontend');
 
 module.exports = {
   entry: './src/frontend/index.ts',
