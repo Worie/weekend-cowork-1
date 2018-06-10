@@ -30,6 +30,11 @@ io.on('connection', (socket) => {
   console.log('Hello world', socket.id);
 
   socket.emit('news', { hello: `hello` });
+
+  socket.on('message', (data: any) => {
+    socket.broadcast.emit('news', { hello: data.message });
+  });
+
 });
 
 // port to listen on

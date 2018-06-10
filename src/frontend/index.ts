@@ -13,10 +13,17 @@ socket.on('news', (data: any) => {
   socket.emit('my other event', { my: 'data' });
 });
 
-const btn = document.querySelector('.send-btn')
-const sendInput = document.querySelector('.send-input')
+// button upon which we'll do something
+const sendButton: HTMLButtonElement = document.querySelector('.send-btn');
 
-btn.addEventListener('click', (e)=>{
-  let inputValue = sendInput.value
-  alert(inputValue);
+// the input for the user to enter his text
+const sendInput: HTMLInputElement = document.querySelector('.send-input');
+
+// upon clicking on the button
+sendButton.addEventListener('click', (e: Event) => {
+
+  // get the current value of the input 
+  let inputValue = sendInput.value;
+
+  socket.emit('message', { message: inputValue });
 })
