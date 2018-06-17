@@ -2,13 +2,17 @@
  * This module is en entry point and the logic below shouldn't be here
  */
 
-import 'reflect-metadata';
 import * as Express from 'express';
 import * as SocketIO from 'socket.io';
 import * as Http from 'http';
-import * as Path from 'path';
+import BTT from 'btt-node';
 
-const path = Path.join(__dirname, '/dist/index.html');
+const btt = new BTT({
+  domain: '127.0.0.1',
+  port: 64472,
+  protocol: 'http',
+  sharedKey: '',
+});
 
 // initialize Express instance 
 const app = Express();
